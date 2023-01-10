@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -86,3 +86,106 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+console.log("Total Months: " + finances.length);
+let total = 0;
+for (let month = 0; month < finances.length; month++) {
+    total = total + finances[month][1]; 
+}     
+console.log("total: $" + total);
+
+let totalDifference = 0;
+for (let month = 1; month < finances.length; month++) {
+  let currentMonthValue = finances[month][1];
+  let previousMonthValue = finances[month - 1][1];
+  if (currentMonthValue > previousMonthValue) {
+    totalDifference += currentMonthValue - previousMonthValue;
+  } else {
+    totalDifference += previousMonthValue - currentMonthValue;
+  }
+}
+let averageDifference = totalDifference / (finances.length - 1);
+averageDifference = Math.round(averageDifference * 100) / 100;
+console.log("Average difference: $" + averageDifference);
+
+
+let max = 0;
+let maxMonth = "";
+for (let month = 0; month < finances.length; month++) {
+  let currentMonthValue = finances[month][1];
+  if (currentMonthValue > max) {
+    max = currentMonthValue;
+    maxMonth = finances[month][0];
+  }
+}
+console.log("Maximum value: $" + max + " in " + maxMonth);
+
+
+
+//if (finances[0][1] > finances[1][1]) {
+//  console.log(finances[0][1] - finances[1][1]);
+//} else {
+//  console.log(finances[1][1] - finances[0][1]);
+//}
+
+//for (let month = 1; month < finances.length; month++) {
+//  let currentMonthValue = finances[month][1];
+//  let previousMonthValue = finances[month - 1][1];
+//  if (currentMonthValue > previousMonthValue) {
+//    console.log(currentMonthValue - previousMonthValue);
+//  } else {
+//    console.log(previousMonthValue - currentMonthValue);
+//  }
+//}
+
+
+//console.log("Total Months: " + finances.length);
+//let x = 0;
+//for (let y = 0; y < finances.length; y++) {
+//    x = x + finances[y][1]; 
+//}     
+//console.log("total: $" + x);
+
+//if (finances[0][1] > finances[1][1]) {
+//  console.log(finances[0][1] - finances[1][1]);
+//} else {
+//  console.log(finances[1][1] - finances[0][1]);
+//}
+
+//let a = 0;
+//for (let b = 0; b < finances.length; b++) {
+//    let current = finances[b][1];
+//    let c = b - 1;
+//    let previous = finances[c][1];
+//    let diff = current - previous;
+//    a += diff;
+//}     
+//let Average = a / 86 
+//Average = math.round(Average * 100) / 100
+//console.log("diff " + average);
+
+
+
+//let z = 0
+//  for (let a = 0; a < finances.length; a++)
+//  z = z + finances[a - 1][1]
+
+
+
+//let b = 0;
+//for (let a = 0; a < finances.length; a++) {
+ //   let c = finances[a][1];
+ //   let d = finances[a - 1][1];
+   // let Change = c - d;
+  //  b += Change;
+//}
+//let Average = b / 86
+//console.log(Average);
+
+
+
+//let total = 38382578;
+//let count = 86;
+//let z = total /= count;
+
+//console.log("Average Change: $" + z);
